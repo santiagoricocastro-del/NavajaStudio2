@@ -1,0 +1,572 @@
+
+/* =========================================
+   NAVAJA STUDIO - ESTILOS GENERALES
+   ========================================= */
+
+/* 1. Variables de identidad visual */
+
+:root {
+    --color-black: #17191b;
+    --color-dark: #202326;
+    --color-card: #25292c;
+    --color-gold: #c49a57;
+    --color-gold-light: #dfbd83;
+    --color-white: #f5f2ec;
+    --color-gray: #a9aaa9;
+
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+/* 2. Configuración general */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+}
+
+p {
+    color: var(--color-gray);
+    line-height: 1.8;
+}
+
+/* 3. Navbar */
+
+.navbar {
+    padding: 22px 0;
+    transition: 0.3s ease;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(23, 25, 27, 0.96);
+    padding: 13px 0;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 154, 87, 0.2);
+}
+
+.brand-logo {
+    color: var(--color-white);
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.brand-logo span {
+    color: var(--color-gold);
+}
+
+.nav-link {
+    color: #e4e1da !important;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--color-gold) !important;
+}
+
+/* 4. Botones */
+
+.btn-gold {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border: 1px solid var(--color-gold);
+    padding: 12px 25px;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: var(--color-gold-light);
+    border-color: var(--color-gold-light);
+    color: var(--color-black);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    border-radius: 3px;
+    padding: 12px 25px;
+}
+
+/* 5. Hero */
+
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(17, 18, 19, 0.97) 0%,
+        rgba(17, 18, 19, 0.83) 48%,
+        rgba(17, 18, 19, 0.30) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.section-tag {
+    color: var(--color-gold);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    line-height: 1.1;
+    max-width: 750px;
+    margin-bottom: 25px;
+}
+
+.hero-title span,
+.section-heading h2 span,
+.about-title span,
+.booking-section h2 span,
+.contact-title span {
+    color: var(--color-gold);
+}
+
+.hero-description {
+    max-width: 520px;
+    font-size: 1.05rem;
+}
+
+.hero-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.hero-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-details strong {
+    font-family: var(--font-title);
+    color: var(--color-gold);
+    font-size: 1.4rem;
+}
+
+.hero-details span {
+    font-size: 0.78rem;
+    color: #d1d0cb;
+}
+
+/* 6. Secciones */
+
+.section-padding {
+    padding: 110px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.section-heading h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    margin-bottom: 18px;
+}
+
+.section-heading p {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* 7. Tarjetas de servicios */
+
+.service-card {
+    height: 100%;
+    background-color: var(--color-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: 0.35s ease;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-gold);
+}
+
+.service-image {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s ease;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.04);
+}
+
+.haircut-image {
+    background-image: url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80");
+}
+
+.beard-image {
+    background-image: url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80");
+}
+
+.combo-image {
+    background-image: url("https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80");
+}
+
+.service-content {
+    padding: 28px;
+}
+
+.service-number {
+    color: var(--color-gold);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.service-content p {
+    font-size: 0.9rem;
+    min-height: 80px;
+}
+
+.service-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 18px;
+    margin-top: 20px;
+}
+
+.service-footer span:first-child {
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+.service-footer span:last-child {
+    color: var(--color-gray);
+    font-size: 0.85rem;
+}
+
+/* 8. Nosotros */
+
+.about-section {
+    background-color: var(--color-dark);
+}
+
+.about-image {
+    min-height: 450px;
+    background-image:
+        url("https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1100&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.about-title {
+    font-size: clamp(2.3rem, 4vw, 3.6rem);
+    margin-bottom: 25px;
+}
+
+/* 9. Barberos */
+
+.barber-card {
+    background-color: var(--color-card);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.barber-card:hover {
+    transform: translateY(-7px);
+}
+
+.barber-image {
+    height: 340px;
+    background-size: cover;
+    background-position: center;
+}
+
+.barber-one {
+    background-image: url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80");
+}
+
+.barber-two {
+    background-image: url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80");
+}
+
+.barber-three {
+    background-image: url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80");
+}
+
+.barber-info {
+    padding: 25px;
+    border-top: 2px solid var(--color-gold);
+}
+
+.barber-info h3 {
+    font-size: 1.5rem;
+}
+
+.barber-info p {
+    margin-bottom: 0;
+    font-size: 0.88rem;
+}
+
+/* 10. Reservas */
+
+.booking-section {
+    background:
+        linear-gradient(
+            rgba(20, 21, 22, 0.91),
+            rgba(20, 21, 22, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.booking-section h2 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    max-width: 850px;
+    margin: 0 auto 20px;
+}
+
+.booking-section p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+}
+
+.booking-note {
+    margin-top: 20px !important;
+    font-size: 0.88rem;
+}
+
+.booking-note a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+/* 11. Contacto */
+
+.contact-title {
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 22px;
+    color: var(--color-gray);
+}
+
+.contact-detail i {
+    color: var(--color-gold);
+    font-size: 1.3rem;
+}
+
+.contact-form {
+    background-color: var(--color-card);
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.form-label {
+    color: var(--color-white);
+    font-size: 0.9rem;
+}
+
+.form-control {
+    background-color: #1c1f21;
+    border: 1px solid #414447;
+    color: white;
+    padding: 13px;
+    border-radius: 3px;
+}
+
+.form-control:focus {
+    background-color: #1c1f21;
+    color: white;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 0.2rem rgba(196, 154, 87, 0.15);
+}
+
+.form-control::placeholder {
+    color: #858585;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+/* 12. Footer */
+
+.footer {
+    background-color: #111314;
+    padding: 55px 0 20px;
+}
+
+.footer-text {
+    margin-top: 10px;
+    font-size: 0.88rem;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: var(--color-white);
+    font-size: 1.4rem;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    color: var(--color-gold);
+}
+
+.footer hr {
+    border-color: #454545;
+    margin-top: 35px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 13. Botón volver arriba */
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+
+    background-color: var(--color-gold);
+    color: var(--color-black);
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 14. Responsive */
+
+@media (max-width: 991px) {
+
+    .navbar {
+        background-color: rgba(23, 25, 27, 0.97);
+    }
+
+    .navbar-collapse {
+        padding: 20px 0;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+    }
+
+    .hero-title {
+        font-size: 3.8rem;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-details {
+        gap: 20px;
+    }
+
+    .hero-details span {
+        font-size: 0.7rem;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+    .barber-image {
+        height: 300px;
+    }
+
+    .footer-socials {
+        justify-content: flex-start;
+    }
+
+}
